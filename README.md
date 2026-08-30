@@ -461,9 +461,9 @@ The data received by the slaves also matched the data transmitted by the master.
 
 The waveform shows the complete SPI communication between the master and four slave devices.
 
-![Complete SPI Waveform](images/Waveform_1.jpeg)
-![](Waveform_2.png)
-![](Waveform_3.png)
+![Complete SPI Waveform](images/waveform_1.jpeg)
+![](waveform_2.png)
+![](waveform_3.png)
 
 ### Waveform Explanation
 
