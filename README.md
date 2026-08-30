@@ -457,35 +457,26 @@ The data received by the slaves also matched the data transmitted by the master.
 
 ## Waveform
 
-The waveform can be used to observe the complete SPI transaction.
+## Simulation Waveform
 
-Important signals to observe are:
+The waveform shows the complete SPI communication between the master and four slave devices.
 
-* `sclk`
-* `mosi`
-* `miso`
-* `ss1`
-* `ss2`
-* `ss3`
-* `ss4`
-* `master_run`
-* `master_done`
-* `master_din`
-* `master_dout`
-* `slave_dout`
+![Complete SPI Waveform](images/Waveform_1.jpeg)
+![](Waveform_2.png)
+![](Waveform_3.png)
 
-During a transaction, the waveform shows:
+### Waveform Explanation
 
-1. The master selects one slave.
-2. The selected slave becomes active.
-3. The master generates SCLK.
-4. Data is transmitted through MOSI.
-5. The selected slave returns data through MISO.
-6. Both master and slave shift their data registers.
-7. After 8 bits, `done` becomes HIGH.
-8. The received data becomes available on `dout`.
+The simulation covers all four SPI modes and all four slave devices.
 
----
+- 0–100 ns: Slave 1 is selected. Modes 00, 01, 10 and 11 are tested using data a1, a2, a3 and a4.
+- 100–200 ns: Slave 2 is selected. Modes 00, 01, 10 and 11 are tested using data b1, b2, b3 and b4.
+- 200–300 ns: Slave 3 is selected. Modes 00, 01, 10 and 11 are tested using data c1, c2, c3 and c4.
+- 300–400 ns: Slave 4 is selected. Modes 00, 01, 10 and 11 are tested using data d1, d2, d3 and d4.
+
+The master receives 11 from Slave 1, 22 from Slave 2, 33 from Slave 3 and 44 from Slave 4.
+
+The done signal indicates the completion of each 8-bit SPI transaction.
 
 ## Project Structure
 
